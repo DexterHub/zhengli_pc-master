@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: "SourceHanSansCn-Medium" !important; */
+}
+
+.main {
+    margin: 0 auto !important;
+    width: 1600px;
+}
+
+@media screen and (max-width: 1660px) {
+    .main {
+        width: 1300px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .main {
+        margin: 0 auto;
+        width: 100%;
+        min-width: 964px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+}
+
+/* @font-face {
+    font-family: "SourceHanSans-CN-Regular";
+    src: url("./fonts/Source Han Sans CN Regular.ttf") format("truetype"),
+        url("./fonts/Source Han Sans CN Regular.eot") format("embedded-opentype"),
+        url("./fonts/Source Han Sans CN Regular.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+} */
+body {
+ overflow: auto !important;
+}
+html,
+body,
+#app,
+#home {
+    width: 100%;
+    /* overflow: overlay; */
+    min-height: 100vh;
+    background: #dcdddf;
+    font-size: 16px;
+    /* font-family: "SourceHanSans-CN-Regular", SourceHanSansCn-Medium, "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, "WenQuanYi Micro Hei", Verdana, sans-serif, "\5B8B\4F53"; */
+    margin-right: calc(-1 * (100vw - 100%));
+    /* overflow-x: hidden; */
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+li {
+    list-style: none;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.myCursor {
+    cursor: pointer;
+}
+
+.el-button--primary {
+    background-color: #1175d2 !important;
+    background: #1175d2 !important;
+    border-color: #1175d2 !important;
+}
+
+.el-radio__input.is-checked .el-radio__inner {
+    background: #1175d2 !important;
+}
+
+.el-radio__input.is-checked+.el-radio__label {
+    color: #1175d2 !important;
+}
+
+.pitch {
+    background-color: #1175d2;
+    border-color: #1175d2;
+}
+
+html .el-image__inner--center {
+    transform: translate(0, 0);
+    left: 0;
+    top: 0;
+}
+
+.el-table__header {
+    width: 100% !important;
+}
+
+.el-table__body {
+    width: 100% !important;
+}
+
+.el-button:hover {}
+
+html body .el-date-range-picker {
+    width: 323px;
+    height: 320px;
+    overflow: hidden;
+    border: none;
+}
+
+html body .el-date-range-picker .el-picker-panel__body {
+    min-width: 100%;
+    position: relative;
+}
+
+html body .el-date-range-picker__content {
+    width: 100%;
+}
+
+.is-right .el-date-range-picker__header {
+    right: 10px;
+    position: absolute;
+    top: -314px;
+}
+
+.is-right .el-date-range-picker__header>div {
+    display: none;
+}
+/*
+
+*/

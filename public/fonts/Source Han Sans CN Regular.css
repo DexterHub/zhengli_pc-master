@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "SourceHanSansCNRegular";
+  src: url("Source Han Sans CN Regular.ttf") format("truetype"),
+       url("Source Han Sans CN Regular.eot") format("embedded-opentype"),
+       url("Source Han Sans CN Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+body{font-family: "SourceHanSansCNRegular",SourceHanSansCn-Medium,Microsoft Yahei,Hiragino Sans GB,Helvetica Neue,Helvetica,tahoma,arial,WenQuanYi Micro Hei,Verdana,sans-serif,"\5B8B\4F53";}
