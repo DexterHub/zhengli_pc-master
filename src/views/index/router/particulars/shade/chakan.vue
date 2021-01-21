@@ -18,6 +18,7 @@
 <script>
     import {donwloadIE} from '@/util/validate.js'
     import {IEVersion} from '@/util/validate.js'
+    import baseUrl from '@/main.js'
   export default {
     components: {},
     data() {
@@ -97,7 +98,7 @@
               data = JSON.parse(data.data);
               this.total = data.length;
               data.forEach((item, i) => {
-                this.imgName = 'http://case.magicalign.com:8605/output' + item.path;
+                this.imgName = baseUrl.pc + '/output' + item.path;
                 that.image2Base64(this.imgName).then((res) => {
                   this.imgArr[i] = res
                   if (i == 0) {

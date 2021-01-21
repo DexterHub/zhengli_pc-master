@@ -26,11 +26,12 @@
   import {
     dateToStr
   } from "@/util/validate.js";
+  import baseUrl from '@/main.js';
   export default {
     components: {},
     data() {
       return {
-        url: 'http://case.magicalign.com:8605/output',
+        url: baseUrl.pc + '/output',
         srcList: [],
         datashuzu: [{
             title: "时间",
@@ -72,7 +73,7 @@
             neirotext1: "上海市闵兴区申虹路958号富力中心C栋6楼 张女士 19756421876"
           }
         ],
-        state: ""
+        state: "",
       };
     },
     methods: {

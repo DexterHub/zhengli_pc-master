@@ -98,6 +98,7 @@
     import {
         compress
     } from '@/util/validate'
+    import baseUrl from '@/main.js'
     export default {
         components: {
 
@@ -128,7 +129,7 @@
                 downImg2:'',
                 downImg3:'',
                 num:0,
-                headBaseURL: 'http://case.magicalign.com:8605/output',
+                headBaseURL: baseUrl.pc + '/output',
             }
         },
         mounted() {

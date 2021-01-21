@@ -131,6 +131,7 @@
     import jzmb2 from './component/jzmb2'
     import jzmb3 from './component/jzmb3'
     import jzmb4 from './component/jzmb4'
+    import baseUrl from '@/main.js'
     export default {
         components: {
             xjbl,
@@ -172,7 +173,7 @@
                 quxiaobingli: '你是否要退出新建病例',
                 // 保存 提示语
                 baocunbuttit: '新建病例成功',
-                constUrl:'http://case.magicalign.com:8605/output',
+                constUrl: baseUrl.pc + '/output',
             };
         },
         created() {

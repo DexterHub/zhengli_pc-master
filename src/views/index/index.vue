@@ -67,7 +67,7 @@
                             <!-- 切换页码 -->
                             <p style="float: left;height: 40px;line-height: 40px;color: #fff">
                                 <i class="el-icon-arrow-left myCursor" @click="pre" style="margin-right:15px"></i>
-                                <span style="user-select:none ">{{ page + "/" + (caseData.totalPage || 1) }}</span>
+                                <span style="user-select:none ">{{ (page || 1) + "/" + (caseData.totalPage || 1) }}</span>
 
                                 <i class="el-icon-arrow-right myCursor" @click="next" style="margin-left:15px"></i>
                             </p>
@@ -467,6 +467,11 @@
                             if (data.code == 200) {
                                 this.caseData = JSON.parse(data.data) || [];
                                 this.searchunm1 = this.caseData.total;
+                                
+                                // 如果当前页码大于总页码,则等于总页码
+                                if(this.page > this.caseData.totalPage) {
+                                    this.page = this.caseData.totalPage
+                                }
 
                                 if (this.tabActive == 1) {
                                     this.treatment = this.searchunm1
@@ -561,7 +566,6 @@
             },
             // 下一页
             next() {
-                console.log(this.page,this.caseData.totalPage);
                 if (this.page >= this.caseData.totalPage) return;
                 this.page++;
                 this.doctor({

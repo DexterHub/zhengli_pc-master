@@ -4,7 +4,7 @@ import router from '@/router'
 import Cookies from "js-cookie"
 import ElementUI from 'element-ui'
 // //开发本地baseUrl
-axios.defaults.baseURL = 'http://case.magicalign.com:8605/web' //本地
+axios.defaults.baseURL = 'http://210.22.120.218:8605/web' //本地
     // timeout : 20000,
 
 const http = axios.create({

@@ -14,9 +14,9 @@ import "element-ui/lib/theme-chalk/index.css";
 
 import html2canvas from "html2canvas";
 
-const phone = "http://case.magicalign.com/wap/";
-const pc = "http://case.magicalign.com";
-
+const phone = "http://210.22.120.218:8605/wap/";
+const pc = "http://210.22.120.218:8605";
+ 
 import {
   Loading
 } from "element-ui";
@@ -106,3 +106,6 @@ new Vue({
     }
   }
 }).$mount("#app");
+export default {
+  pc
+}

@@ -19,6 +19,7 @@
     </el-dialog>
 </template>
 <script>
+    import baseUrl from '@/main.js'
     export default {
         components: {
 
@@ -56,7 +57,7 @@
                     data
                 }) => {
                     if (data.code == 200) {
-                        this.imgUrl = 'http://case.magicalign.com:8605/output'+JSON.parse(data.data).url;
+                        this.imgUrl = baseUrl.pc + '/output'+JSON.parse(data.data).url;
                     }
 
                 }).catch(err => {

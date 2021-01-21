@@ -15,7 +15,7 @@
                 :style="i==3?'margin-right:275px':''+i==1?'margin:0 30px':''+i==6?'margin:0 30px':''"
                 :class="item.userImage?'forbid':''">
                 <el-upload :ref="'input'+i" 
-                    :action="baseURL" 
+                    :action="url" 
                     :show-file-list="false" 
                     :file-list="fileList"
                     :on-change="addFile" 
@@ -59,6 +59,7 @@
     import {
         compress
     } from '@/util/validate'
+    import baseUrl from '@/main.js'
     export default {
         components: {
 
@@ -81,8 +82,8 @@
                 stageName: '', //
                 stageCount: '', //
                 upImage: '',
-                url: 'http://case.magicalign.com:8605/web/caseInfo/stepEight',
-                headBaseURL: 'http://case.magicalign.com:8605/output',
+                url: baseUrl.pc + '/web/caseInfo/stepEight',
+                headBaseURL: baseUrl.pc + '/output',
                 dialogFormVisible: false,
                 radio: '1',
                 checked: true,
@@ -136,11 +137,7 @@
                     nameI: '右侧咬合'
                 }],
                 dataImg: [],
-                baseURL: null, // 默认地址
             }
-        },
-        created() {
-            this.baseURL = this.$http.defaults.baseURL + '/caseInfo/stepEight';
         },
         mounted() {
             this.zxcv = this.$store.state.rightCode.includes(2);
@@ -216,7 +213,9 @@
                 var img = new Image();
                 img.setAttribute("crossOrigin", 'Anonymous');
                 img.src = imgDom;
+                console.log(img);
                 img.onload = function () {
+                    console.log('图片转base64');
                     var canvas = document.createElement("canvas");
                     canvas.width = img.width;
                     canvas.height = img.height;
@@ -224,6 +223,9 @@
                     ctx.drawImage(img, 0, 0, img.width, img.height);
                     that.uploading[num].downImg = canvas.toDataURL("image/png");
                     return that.uploading[num].downImg
+                }
+                img.onerror = function(error){
+                    console.log('加载失败',error);
                 }
             },
             // 确定用户点击哪一个图片
@@ -272,6 +274,8 @@
                         })
                         let that = this;
                         this.leng = this.dataImg.length;
+                        console.log( this.dataImg);
+                    
                         this.dataImg.forEach(item => {
                             switch (item.fileNumber) {
                                 // 1.正面像 
@@ -287,7 +291,8 @@
                                 // 11.X光片头颅侧位像 
                                 // 12.口扫文件
                                 case '1':
-                                    that.uploading[0].userImage = that.headBaseURL + item.path
+                                    // console.log(that.headBaseURL + item.path);
+                                   that.uploading[0].userImage = that.headBaseURL + item.path
                                     that.image2Base64(0, that.headBaseURL + item.path);
                                     that.srcList.push(that.headBaseURL + item.path)
                                     break;
